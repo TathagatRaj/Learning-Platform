@@ -5,7 +5,7 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const { connectToMongoDB } = require('./connect');  // MongoDB connection function
-const userRoute = require('./Route/user');  // User route for the app
+const userRoute = require('./Route/userRoute');  // User route for the app
 
 const app = express();
 const PORT = process.env.PORT || 5000;  // Use port from .env or fallback to 5000
@@ -25,14 +25,24 @@ app.use(express.static(path.join(__dirname, '../Frontend')));
 // Use the user routes for '/user' endpoint
 app.use('/user', userRoute);
 
-// Define the root route to render signup page
+// Define the root route to render welcome page
 app.get('/', (req, res) => {
+    res.render('welcome');
+});
+
+// Define the '/signup' route to render signup page
+app.get('/signup', (req, res) => {
     res.render('signup');
 });
 
 // Define the '/login' route to render login page
 app.get('/login', (req, res) => {
     res.render('login');
+})
+
+// Define the '/reset' route to render reset password page
+app.get('/reset', (req, res) => {
+    res.render('reset');
 })
 
 // Start the server and listen on the defined port
