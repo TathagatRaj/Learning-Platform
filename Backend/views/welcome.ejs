@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
     <%- include('./partials/head.ejs') %>
-    <title>SignUp</title>
+    <title>LogIn</title>
     <style>
         body {
             height: 100vh;
+            font-size: 15px;
             background-image: url('/Images/purple-mountain.jpeg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        h1 {
+            color: white;
+        }
     </style>
 </head>
 
 <body>
+    <%- include('./partials/navbar.ejs') %>
+
     <div class="container">
-        <h1 class="text-center pt-4">Welcome, <%= name %></h1>
+        <h1 class="text-center pt-4">Welcome to Tathagat Raj blogs</h1>
     </div>
 </body>
 </html>
