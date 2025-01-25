@@ -15,7 +15,7 @@ connectToMongoDB(process.env.MONGODB_URI);
 
 // Set up the view engine to use EJS for rendering HTML templates
 app.set('view engine', 'ejs');
-app.set('views', path.resolve('./views'));  // Defie views dir path
+app.set('views', path.resolve('../Frontend/views'));  // Defie views dir path
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
